@@ -1,0 +1,196 @@
+# Load the package (after installation, see above).
+library(optimx)        
+library(FD)       # for FD::maxent() (make sure this is up-to-date)
+library(snow)     # (if you want to use multicore functionality; some systems/R versions prefer library(parallel), try either)
+library(parallel)
+library(BioGeoBEARS)
+
+calc_loglike_sp = compiler::cmpfun(calc_loglike_sp_prebyte)    # crucial to fix bug in uppass calculations
+calc_independent_likelihoods_on_each_branch = compiler::cmpfun(calc_independent_likelihoods_on_each_branch_prebyte)
+
+
+#######################################################
+# SETUP: YOUR TREE FILE AND GEOGRAPHY FILE
+
+trfn = "astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.tre"
+moref(trfn)
+#tr = read.tree(trfn)
+tr = read.tree(trfn)
+tr
+
+# BioGeoBEARS can't handle sampled ancestors (unary nodes), so use this:
+# write.tree(collapse.singles(tr), file = "fagales_combined.hamamelisremoved.mcc.newick.nonegative.collapsesingles.tre")
+# BioGeoBEARS also can't handle negative or zero branch lengths
+# To remove fossils use this: 
+# tree <- drop.tip(tree, c("Alnusclarnoensis", "Antiquacupula_sulcata", "Antiquocarya_verruculosa", "Archaefagacea_futabensis", "Asterocarpinus_perplexans", "Beardia_vancouverensis", "Betula_leopoldae", "Budvaricarpus_serialis", "Calathiocarpus_minimus", "Caryanthus_knoblochii", "Cascadiacarpa_spinosa", "Casholdia_microptera", "Contracuparius_huntsvillensis", "Cranea_wyomingensis", "Cruciptera_simpsonii", "Dahlgrenianthus_suecicus", "Endressianthus_miraensis", "Fagopsis_longifolia", "Ferrignocarpus_bivalvis", "Hooleya_lata", "Manningia_crassa", "Normanthus_miraensis", "Palaeocarpinus_dakotensis", "Palaeocarya_clarnensis", "Paleooreomunnea_stoneana", "Paleoplatycarya_wingii", "Polyptera_manningii", "Protofagacea_allonensis", "Pseudofagus_idahoensis", "Soepadmoa_cupulata", "Trigonobalanoidea_americana"))
+
+geogfn = "biogeobears_subg.virgulus.fixed.tsv"
+moref(geogfn)
+tipranges = getranges_from_LagrangePHYLIP(lgdata_fn=geogfn)
+tipranges
+max_range_size = 3
+
+#######################################################
+# Run DEC
+#######################################################
+
+# Intitialize a default model (DEC model)
+BioGeoBEARS_run_object = define_BioGeoBEARS_run()
+BioGeoBEARS_run_object$trfn = trfn
+BioGeoBEARS_run_object$geogfn = geogfn
+BioGeoBEARS_run_object$max_range_size = max_range_size
+BioGeoBEARS_run_object$min_branchlength = 0.000001    # Min to treat tip as a direct ancestor (no speciation event)
+BioGeoBEARS_run_object$include_null_range = TRUE    # set to FALSE for e.g. DEC* model, DEC*+J, etc.
+BioGeoBEARS_run_object$speedup = TRUE          # shorcuts to speed ML search; use FALSE if worried (e.g. >3 params)
+BioGeoBEARS_run_object$use_optimx = TRUE     # if FALSE, use optim() instead of optimx()
+BioGeoBEARS_run_object$num_cores_to_use = 1
+BioGeoBEARS_run_object$force_sparse = FALSE    # force_sparse=TRUE causes pathology & isn't much faster at this scale
+BioGeoBEARS_run_object = readfiles_BioGeoBEARS_run(BioGeoBEARS_run_object)
+BioGeoBEARS_run_object$return_condlikes_table = TRUE
+BioGeoBEARS_run_object$calc_TTL_loglike_from_condlikes_table = TRUE
+BioGeoBEARS_run_object$calc_ancprobs = TRUE    # get ancestral states from optim run
+#BioGeoBEARS_run_object
+#BioGeoBEARS_run_object$BioGeoBEARS_model_object
+#BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table
+check_BioGeoBEARS_run(BioGeoBEARS_run_object)
+
+# For a slow analysis, run once, then set runslow=FALSE to just 
+# load the saved result.
+runslow = TRUE
+resfn = "symphyo_DEC.Rdata"
+if (runslow) {
+  res = bears_optim_run(BioGeoBEARS_run_object)
+  res    
+  save(res, file=resfn)
+  resDEC = res
+} else {
+  load(resfn)
+  resDEC = res
+}
+
+#######################################################
+# Run DEC+J
+#######################################################
+BioGeoBEARS_run_object = define_BioGeoBEARS_run()
+BioGeoBEARS_run_object$trfn = trfn
+BioGeoBEARS_run_object$geogfn = geogfn
+BioGeoBEARS_run_object$max_range_size = max_range_size
+BioGeoBEARS_run_object$min_branchlength = 0.000001    # Min to treat tip as a direct ancestor (no speciation event)
+BioGeoBEARS_run_object$include_null_range = TRUE    # set to FALSE for e.g. DEC* model, DEC*+J, etc.
+BioGeoBEARS_run_object$speedup = TRUE          # shorcuts to speed ML search; use FALSE if worried (e.g. >3 params)
+BioGeoBEARS_run_object$use_optimx = TRUE     # if FALSE, use optim() instead of optimx()
+BioGeoBEARS_run_object$num_cores_to_use = 1
+BioGeoBEARS_run_object$force_sparse = FALSE    # force_sparse=TRUE causes pathology & isn't much faster at this scale
+BioGeoBEARS_run_object = readfiles_BioGeoBEARS_run(BioGeoBEARS_run_object)
+BioGeoBEARS_run_object$return_condlikes_table = TRUE
+BioGeoBEARS_run_object$calc_TTL_loglike_from_condlikes_table = TRUE
+BioGeoBEARS_run_object$calc_ancprobs = TRUE    # get ancestral states from optim run
+
+# Set up DEC+J model
+# Get the ML parameter values from the 2-parameter nested model
+# (this will ensure that the 3-parameter model always does at least as good)
+dstart = resDEC$outputs@params_table["d","est"]
+estart = resDEC$outputs@params_table["e","est"]
+jstart = 0.0001
+
+# Input starting values for d, e
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["d","init"] = dstart
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["d","est"] = dstart
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["e","init"] = estart
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["e","est"] = estart
+
+# Add j as a free parameter
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["j","type"] = "free"
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["j","init"] = jstart
+BioGeoBEARS_run_object$BioGeoBEARS_model_object@params_table["j","est"] = jstart
+
+check_BioGeoBEARS_run(BioGeoBEARS_run_object)
+
+resfn = "symphyo_DECJ.Rdata"
+runslow = TRUE
+if (runslow) {
+  res = bears_optim_run(BioGeoBEARS_run_object)
+  res    
+  save(res, file=resfn)
+  resDECj = res
+} else {
+  load(resfn)
+  resDECj = res
+}
+
+#######################################################
+# PDF plots
+#######################################################
+pdffn = "symphyo_DEC_vs_DECJ.pdf"
+pdf(pdffn, width=6, height=6)
+
+#######################################################
+# Plot ancestral states - DEC
+#######################################################
+analysis_titletxt ="BioGeoBEARS DEC"
+
+# Setup
+results_object = resDEC
+scriptdir = np(system.file("extdata/a_scripts", package="BioGeoBEARS"))
+
+# States
+res2 = plot_BioGeoBEARS_results(results_object, analysis_titletxt, addl_params=list("j"), plotwhat="text", label.offset=0.1, tipcex=0.6, statecex=0.5, splitcex=0.5, titlecex=0.8, plotsplits=TRUE, cornercoords_loc=scriptdir, include_null_range=TRUE, tr=tr, tipranges=tipranges)
+
+# Pie chart
+plot_BioGeoBEARS_results(results_object, analysis_titletxt, addl_params=list("j"), plotwhat="pie", label.offset=0.45, tipcex=0.7, statecex=0.5, splitcex=0.5, titlecex=0.8, plotsplits=TRUE, cornercoords_loc=scriptdir, include_null_range=TRUE, tr=tr, tipranges=tipranges)
+
+#######################################################
+# Plot ancestral states - DECJ
+#######################################################
+analysis_titletxt ="BioGeoBEARS DEC+J"
+
+# Setup
+results_object = resDECj
+scriptdir = np(system.file("extdata/a_scripts", package="BioGeoBEARS"))
+
+# States
+res1 = plot_BioGeoBEARS_results(results_object, analysis_titletxt, addl_params=list("j"), plotwhat="text", label.offset=0.2, tipcex=.7, statecex=0.5, splitcex=0.5, titlecex=0.8, plotsplits=TRUE, cornercoords_loc=scriptdir, include_null_range=TRUE, tr=tr, tipranges=tipranges)
+
+# Pie chart
+plot_BioGeoBEARS_results(results_object, analysis_titletxt, addl_params=list("j"), plotwhat="pie", label.offset=0.45, tipcex=0.7, statecex=0.5, splitcex=0.5, titlecex=0.8, plotsplits=TRUE, cornercoords_loc=scriptdir, include_null_range=TRUE, tr=tr, tipranges=tipranges)
+
+dev.off()  # Turn off PDF
+cmdstr = paste("open ", pdffn, sep="")
+system(cmdstr) # Plot it
+
+
+
+# Set up empty tables to hold the statistical results
+restable = NULL
+teststable = NULL
+
+#######################################################
+# Statistics -- DEC vs. DEC+J
+#######################################################
+# We have to extract the log-likelihood differently, depending on the 
+# version of optim/optimx
+LnL_2 = get_LnL_from_BioGeoBEARS_results_object(resDEC)
+LnL_1 = get_LnL_from_BioGeoBEARS_results_object(resDECj)
+
+numparams1 = 3
+numparams2 = 2
+stats = AICstats_2models(LnL_1, LnL_2, numparams1, numparams2)
+stats
+
+# DEC, null model for Likelihood Ratio Test (LRT)
+res2 = extract_params_from_BioGeoBEARS_results_object(results_object=resDEC, returnwhat="table", addl_params=c("j"), paramsstr_digits=4)
+# DEC+J, alternative model for Likelihood Ratio Test (LRT)
+res1 = extract_params_from_BioGeoBEARS_results_object(results_object=resDECj, returnwhat="table", addl_params=c("j"), paramsstr_digits=4)
+
+# The null hypothesis for a Likelihood Ratio Test (LRT) is that two models
+# confer the same likelihood on the data. See: Brian O'Meara's webpage:
+# http://www.brianomeara.info/tutorials/aic
+# ...for an intro to LRT, AIC, and AICc
+
+rbind(res2, res1)
+tmp_tests = conditional_format_table(stats)
+
+restable = rbind(restable, res2, res1)
+teststable = rbind(teststable, tmp_tests)
+
+
