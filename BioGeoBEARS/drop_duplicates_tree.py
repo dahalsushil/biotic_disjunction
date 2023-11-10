@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 # Run like:
-# ./drop_duplicates_tree.py astral.sushilmegatree.subg.virgulus.redo.newick.tre astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.tre
+# python3 drop_duplicates_tree.py astral.sushilmegatree.subg.virgulus.redo.newick.tre astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.tre
 
 
 import dendropy

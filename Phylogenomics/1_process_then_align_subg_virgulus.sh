@@ -39,12 +39,12 @@ sed -i 's/DNA/GTR+G/g' partition.50missing.txt
 
 # Remove high missing data TAXA (this time on the concatenated alignment)
 
-python3 removemissingdatataxa.py concatenated.50missing.virgulus.fasta concatenated.50missing.80taxadeleted.virgulus.fasta 0.2
+python3 removemissingdatataxa.py concatenated.50missing.virgulus.fasta concatenated.50missing.50taxadeleted.virgulus.fasta 0.5
 
 
 # Run concatenated tree
 
-raxml-ng -all --model partition.50missing.txt --msa concatenated.50missing.80taxadeleted.virgulus.fasta --prefix subg.virgulus --seed $RANDOM --tree pars{10} --threads 40
+raxml-ng -all --model partition.50missing.txt --msa concatenated.50missing.50taxadeleted.virgulus.fasta --prefix subg.virgulus --seed $RANDOM --tree pars{10} --threads 40
 
 # Generate input files for ASTRAL
 # Combine all gene trees into one file
