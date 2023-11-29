@@ -12,9 +12,8 @@ calc_independent_likelihoods_on_each_branch = compiler::cmpfun(calc_independent_
 #######################################################
 # SETUP: YOUR TREE FILE AND GEOGRAPHY FILE
 
-trfn = "astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.tre"
+trfn = "FigTree.subg.virgulus.tre"
 moref(trfn)
-#tr = read.tree(trfn)
 tr = read.tree(trfn)
 tr
 
@@ -122,7 +121,7 @@ if (runslow) {
 # PDF plots
 #######################################################
 pdffn = "symphyo_DEC_vs_DECJ.pdf"
-pdf(pdffn, width=6, height=6)
+pdf(pdffn, width=12, height=12)
 
 #######################################################
 # Plot ancestral states - DEC
