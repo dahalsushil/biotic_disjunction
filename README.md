@@ -11,7 +11,7 @@ This includes the shell scripts to clean the sequencing data, doing the alignmen
 ### mcmctree
 The program uses for inputa sequence alignment (nucleotide or protein), a phylogenetic tree with fossil calibrations, and a control file (usually called mcmctree.ctl) that contains the instructions for the program. MCMCTree is part of the PAML package.
 - [astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.formatted.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.formatted.tre): Dated ASTRAL tree
-- [1_mcmctree.BV.ctl] (https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/1_mcmctree.BV.ctl): The control file that contains all the necessary instructions to run the MCMCTree program.
+- [1_mcmctree.BV.ctl](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/1_mcmctree.BV.ctl): The control file that contains all the necessary instructions to run the MCMCTree program.
 
 ## Code/Software
 - RStudio, Bash
