@@ -1,6 +1,5 @@
 # Biotic_disjunction
 
-
 ## Phylogenomics:
 This includes the shell scripts to clean the sequencing data, doing the alignments, getting ASTRAL and RaxML tree
   - [1_process_then_align_subg_virgulus.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/1_process_then_align_subg_virgulus.sh): Shell script to do the alignments and get the gene trees for ASTRAL, concatenate alignments and get the concanated tree
@@ -8,6 +7,9 @@ This includes the shell scripts to clean the sequencing data, doing the alignmen
   - [astral.sushilmegatree.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/Results/astral.sushilmegatree.tre): ASTRAL result
   - [subg.virgulus.raxml.support.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/Results/subg.virgulus.raxml.support.tre): RAxML result
 
+## BioGeoBEARS
+### mcmctree
+The program uses for inputa sequence alignment (nucleotide or protein), a phylogenetic tree with fossil calibrations, and a control file (usually called mcmctree.ctl) that contains the instructions for the program. MCMCTree is part of the PAML package.
 
 
 ## Code/Software
