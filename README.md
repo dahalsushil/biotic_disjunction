@@ -15,6 +15,11 @@ The program uses for inputa sequence alignment (nucleotide or protein), a phylog
 - [mcmc.txt](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/mcmc.txt): contains the raw output of the MCMC
 - [SeedUsed](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/SeedUsed): contains the random seed used to initialize the MCMC
 - [FigTree.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/FigTree.tre): a version of the posterior tree in nexus format
+
+Try running it in non-executable mode:
+```
+mcmctree mcmctree.ctl
+```
   
 
 ## Code/Software
