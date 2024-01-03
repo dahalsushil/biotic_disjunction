@@ -1,0 +1,192 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=90;
+	taxlabels
+	Acamptopappus_sphaerocephalus_E468
+	Ampelaster_carolinianus_E417
+	Bigelowia_nudata_E472
+	Boltonia_diffusa_E481
+	Brintonia_discoidea_E478
+	Canadanthus_modestus_E133
+	Chrysopsis_mariana_E477
+	Doellingeria_sericocarpoides_E475
+	Erigeron_philadelphicus_E476
+	Eurybia_hemispherica_E474
+	Eurybia_macrophylla_E2544
+	Euthamia_graminifolia_E480
+	Heterotheca_latifolia_E482
+	Ionactis_linariifolius_E430
+	Ionactis_linariifolius_E473
+	Oclemena_reticulata_E1087
+	Oreostemma_alpigenum_E1068
+	Pityopsis_graminifolia_E470
+	Sericocarpus_asteroides_E432
+	Sericocarpus_tortifolius_E469
+	Solidago_ptarmicoides_E433
+	Symphyotrichum_adnatum_E1982
+	Symphyotrichum_adnatum_E56
+	Symphyotrichum_adscendens_E2559
+	Symphyotrichum_amethystinum_E139
+	Symphyotrichum_amethystinum_E140
+	Symphyotrichum_bimater_E1093
+	Symphyotrichum_bimater_E1094
+	Symphyotrichum_bullatum_E1117
+	Symphyotrichum_chapmanii_E2027
+	Symphyotrichum_chihuahuense_E1173
+	Symphyotrichum_ciliatum_E2586
+	Symphyotrichum_concolor_E2034
+	Symphyotrichum_concolor_E2037
+	Symphyotrichum_concolor_E2047
+	Symphyotrichum_defoliatum_E2638
+	Symphyotrichum_elliotii_E2183
+	Symphyotrichum_ericoides_E1057
+	Symphyotrichum_ericoides_E2187
+	Symphyotrichum_ericoides_E2188
+	Symphyotrichum_expansum_E1000
+	Symphyotrichum_falcatum_E962
+	Symphyotrichum_falcatum_var_commutatum_E964
+	Symphyotrichum_fendleri_E2602
+	Symphyotrichum_fendleri_E2605
+	Symphyotrichum_fendleri_E2606
+	Symphyotrichum_fontinale_E2543
+	Symphyotrichum_frondosum_E2642
+	Symphyotrichum_georgianum_E77
+	Symphyotrichum_georgianum_E79
+	Symphyotrichum_grandiflorum_E108
+	Symphyotrichum_grandiflorum_E2192
+	Symphyotrichum_grandiflorum_E2196
+	Symphyotrichum_gypsophilum_E970
+	Symphyotrichum_hintonii_E974
+	Symphyotrichum_moranense_E886
+	Symphyotrichum_moranense_E887
+	Symphyotrichum_moranense_E907
+	Symphyotrichum_novae-angliae_E186
+	Symphyotrichum_novae-angliae_E84
+	Symphyotrichum_novae-angliae_E88
+	Symphyotrichum_oblongifolium_E114
+	Symphyotrichum_oblongifolium_E2289
+	Symphyotrichum_oblongifolium_E2296
+	Symphyotrichum_patens_E210
+	Symphyotrichum_patens_var_patens_E212
+	Symphyotrichum_patens_var_terranigrum_E2311
+	Symphyotrichum_phlogifolium_E2325
+	Symphyotrichum_phlogifolium_E2326
+	Symphyotrichum_phlogifolium_E2331
+	Symphyotrichum_potosinum_E936
+	Symphyotrichum_praealtum_E2352
+	Symphyotrichum_pratense_E215
+	Symphyotrichum_pratense_E2362
+	Symphyotrichum_pratense_E2363
+	Symphyotrichum_purpurascens_E836
+	Symphyotrichum_purpurascens_E837
+	Symphyotrichum_sericeum_E123
+	Symphyotrichum_subulatum_var_squamatum_E772
+	Symphyotrichum_subulatum_var_subulatum_E2474
+	Symphyotrichum_tenuifolium_E228
+	Symphyotrichum_turneri_E798
+	Symphyotrichum_turneri_E801
+	Symphyotrichum_vahlii_E793
+	Symphyotrichum_walteri_E2536
+	Symphyotrichum_walteri_E2538
+	Symphyotrichum_yukonense_E2631
+	Symphyotrichum_yukonense_E2632
+	Symphyotrichum_yukonense_E2633
+	Xanthisma_gracile_E467
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (Doellingeria_sericocarpoides_E475:1.0,(Oclemena_reticulata_E1087:1.0,((Ionactis_linariifolius_E473:1.0,Ionactis_linariifolius_E430:1.0)[&label=1]:1.63771,(Erigeron_philadelphicus_E476:1.0,(Boltonia_diffusa_E481:1.0,(((Bigelowia_nudata_E472:1.0,Euthamia_graminifolia_E480:1.0)[&label=1]:0.824461,((Sericocarpus_tortifolius_E469:1.0,Sericocarpus_asteroides_E432:1.0)[&label=1]:0.512545,(Acamptopappus_sphaerocephalus_E468:1.0,(Brintonia_discoidea_E478:1.0,Solidago_ptarmicoides_E433:1.0)[&label=1]:0.399971)[&label=1]:1.093076)[&label=1]:0.533234)[&label=0.21]:0.0,((Chrysopsis_mariana_E477:1.0,(Pityopsis_graminifolia_E470:1.0,Heterotheca_latifolia_E482:1.0)[&label=1]:0.524579)[&label=1]:0.870278,((Oreostemma_alpigenum_E1068:1.0,(Eurybia_macrophylla_E2544:1.0,Eurybia_hemispherica_E474:1.0)[&label=0.82]:0.197324)[&label=0.49]:0.052818,(Xanthisma_gracile_E467:1.0,(Canadanthus_modestus_E133:1.0,(Symphyotrichum_gypsophilum_E970:1.0,(Ampelaster_carolinianus_E417:1.0,((Symphyotrichum_defoliatum_E2638:1.0,((Symphyotrichum_yukonense_E2633:1.0,(Symphyotrichum_yukonense_E2631:1.0,Symphyotrichum_yukonense_E2632:1.0)[&label=1]:0.275734)[&label=1]:1.459242,(((Symphyotrichum_fendleri_E2606:1.0,(Symphyotrichum_fendleri_E2602:1.0,Symphyotrichum_fendleri_E2605:1.0)[&label=0.86]:0.102042)[&label=1]:0.783579,((Symphyotrichum_oblongifolium_E2289:1.0,(Symphyotrichum_oblongifolium_E2296:1.0,Symphyotrichum_oblongifolium_E114:1.0)[&label=0.7]:0.093532)[&label=1]:0.473315,((Symphyotrichum_phlogifolium_E2326:1.0,(Symphyotrichum_phlogifolium_E2331:1.0,Symphyotrichum_phlogifolium_E2325:1.0)[&label=0.66]:0.054254)[&label=1]:0.373643,((Symphyotrichum_georgianum_E79:1.0,Symphyotrichum_georgianum_E77:1.0)[&label=0.6]:0.179476,(Symphyotrichum_patens_var_terranigrum_E2311:1.0,(Symphyotrichum_patens_var_patens_E212:1.0,Symphyotrichum_patens_E210:1.0)[&label=0.4]:0.01559)[&label=0.7]:0.192922)[&label=0.68]:0.141532)[&label=0.7]:0.055499)[&label=1]:0.197512)[&label=0.41]:0.012382,(((Symphyotrichum_grandiflorum_E2196:1.0,((Symphyotrichum_grandiflorum_E2192:1.0,Symphyotrichum_grandiflorum_E108:1.0)[&label=0.54]:0.072853,((Symphyotrichum_walteri_E2536:1.0,Symphyotrichum_walteri_E2538:1.0)[&label=0.53]:0.057553,(Symphyotrichum_adnatum_E56:1.0,Symphyotrichum_adnatum_E1982:1.0)[&label=0.73]:0.115367)[&label=1]:0.39586)[&label=0.67]:0.12731)[&label=0.35]:0.0,((Symphyotrichum_concolor_E2034:1.0,(Symphyotrichum_concolor_E2037:1.0,Symphyotrichum_concolor_E2047:1.0)[&label=0.61]:0.077917)[&label=1]:0.536193,(Symphyotrichum_sericeum_E123:1.0,(Symphyotrichum_pratense_E215:1.0,(Symphyotrichum_pratense_E2362:1.0,Symphyotrichum_pratense_E2363:1.0)[&label=0.37]:0.0)[&label=0.27]:0.0)[&label=1]:0.407386)[&label=0.9]:0.121387)[&label=0.55]:0.0361,((Symphyotrichum_amethystinum_E140:1.0,(Symphyotrichum_amethystinum_E139:1.0,(Symphyotrichum_novae-angliae_E88:1.0,(Symphyotrichum_novae-angliae_E186:1.0,Symphyotrichum_novae-angliae_E84:1.0)[&label=0.38]:0.008029)[&label=1]:0.386787)[&label=0.72]:0.105395)[&label=0.94]:0.19192,((Symphyotrichum_ericoides_E2188:1.0,(Symphyotrichum_ericoides_E2187:1.0,(Symphyotrichum_ericoides_E1057:1.0,(Symphyotrichum_falcatum_E962:1.0,Symphyotrichum_falcatum_var_commutatum_E964:1.0)[&label=0.81]:0.091205)[&label=0.87]:0.102757)[&label=0.41]:0.012901)[&label=1]:0.325488,((Symphyotrichum_chihuahuense_E1173:1.0,(Symphyotrichum_purpurascens_E836:1.0,(Symphyotrichum_purpurascens_E837:1.0,(Symphyotrichum_bimater_E1094:1.0,Symphyotrichum_bimater_E1093:1.0)[&label=0.99]:0.342541)[&label=0.46]:0.035741)[&label=0.53]:0.065429)[&label=0.81]:0.161011,((Symphyotrichum_moranense_E887:1.0,(Symphyotrichum_moranense_E907:1.0,Symphyotrichum_moranense_E886:1.0)[&label=0.58]:0.064016)[&label=0.93]:0.265511,(Symphyotrichum_turneri_E801:1.0,(Symphyotrichum_hintonii_E974:1.0,Symphyotrichum_turneri_E798:1.0)[&label=0.87]:0.482715)[&label=0.69]:0.190485)[&label=0.36]:0.009357)[&label=1]:0.391313)[&label=0.91]:0.108601)[&label=0.7]:0.065354)[&label=0.59]:0.041198)[&label=0.7]:0.058636)[&label=0.98]:0.164238)[&label=0.89]:0.134731,(Symphyotrichum_adscendens_E2559:1.0,(Symphyotrichum_chapmanii_E2027:1.0,((Symphyotrichum_vahlii_E793:1.0,(Symphyotrichum_frondosum_E2642:1.0,Symphyotrichum_ciliatum_E2586:1.0)[&label=1]:0.762032)[&label=0.72]:0.150366,(((Symphyotrichum_potosinum_E936:1.0,Symphyotrichum_tenuifolium_E228:1.0)[&label=0.67]:0.068016,(Symphyotrichum_subulatum_var_squamatum_E772:1.0,(Symphyotrichum_expansum_E1000:1.0,Symphyotrichum_subulatum_var_subulatum_E2474:1.0)[&label=1]:0.3376)[&label=1]:0.633943)[&label=0.99]:0.158337,((Symphyotrichum_praealtum_E2352:1.0,Symphyotrichum_bullatum_E1117:1.0)[&label=0.28]:0.0,(Symphyotrichum_fontinale_E2543:1.0,Symphyotrichum_elliotii_E2183:1.0)[&label=0.67]:0.105293)[&label=1]:0.407752)[&label=0.56]:0.033532)[&label=0.65]:0.089032)[&label=0.99]:0.248627)[&label=0.99]:0.184517)[&label=0.84]:0.236684)[&label=1]:0.612009)[&label=0.96]:0.159328)[&label=1]:0.442287)[&label=0.49]:0.053328)[&label=1]:0.257221)[&label=1]:0.192379)[&label=0.53]:0.038291)[&label=0.88]:0.09788)[&label=0.92]:0.124164)[&label=1]:1.03037):0.0);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="label";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=true;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=436;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="label";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+
