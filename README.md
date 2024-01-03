@@ -20,7 +20,8 @@ Try running it in non-executable mode:
 ```
 mcmctree mcmctree.ctl
 ```
-  
+### BioGeoBEARS
+- [biogeo_symphyo.R](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeo_symphyo.R): R script to set up for running BioGeoBEARS
 
 ## Code/Software
 - RStudio, Bash
