@@ -21,7 +21,7 @@ Try running it in non-executable mode:
 mcmctree mcmctree.ctl
 ```
 ### BioGeoBEARS
-- [FigTree.subg.virgulus.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/FigTree.subg.virgulus.tre): tree file
+- [FigTree.subg.virgulus.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/FigTree.subg.virgulus.tre): .tre file
 - [biogeobears_subg.virgulus.fixed.tsv](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeobears_subg.virgulus.fixed.tsv): .tsv file containing biogeographic range for each species
 - [biogeo_symphyo.R](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeo_symphyo.R): R script to set up for running BioGeoBEARS
 - [symphyo_DEC_vs_DECJ.pdf](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/symphyo_DEC_vs_DECJ.pdf): Plot ancestral states - DEC vs DEC+J
