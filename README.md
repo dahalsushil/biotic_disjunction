@@ -34,6 +34,18 @@ mcmctree mcmctree.ctl
 - [3_csv_to_shapefile_plus_trainingogr_loop.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/3_csv_to_shapefile_plus_trainingogr_loop.sh): Script for writing point shapfiles
 - [4_Symphyotrichum_batch_clip.r](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/4_Symphyotrichum_batch_clip.r): R script for batch clippings
 - [5_MAXENT_batch.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/5_MAXENT_batch.sh): Script for batch runs of Maxent in a bash shell. This assumes that the species names in the occurrence files are the same as the entry in the species column within the files
+- [BatchMask_ryan.r](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/BatchMask_ryan.r): R file for cropping (masking) the raster files with multiple shape file and stores them in separate folders. Masked files are stored in seperate folders with shape file name and names of the masked files are kept same
+- [aaa_coord.vrt](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/aaa_coord.vrt):
+- [aaa_header.txt](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/aaa_header.txt): Text file that contains the header
+- [extract_pointvalues_evenhigherthroughput.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/extract_pointvalues_evenhigherthroughput.py): Python script to extract environmental values for points, check for pixelwise duplicates and also to count pixel-wise duplicates
+- [powo.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/powo.py):
+- [powo_trim.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/powo_trim.py): Script to automate training region development
+- [powo_trim_loop.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/powo_trim_loop.sh): Script to trim POWO record
+- [remove_geographic_outliers.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/remove_geographic_outliers.py): Simple script to remove geographic outliers based on standard deviations of distance. Make sure basic things like exact duplicates have been taken care of so the standard deviations are meaningful.
+- [training_regions_ogr.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/training_regions_ogr.py): Script to automate training region development. Points should already be ESRI shape files.Run like this:
+```
+for f in *.shp; do ./training_regions.py ${f} /Users/Fasch/Desktop/Heuchera_occurrences_test/terr-ecoregions-TNC/tnc_terr_ecoregions.shp; done
+```
 
 
 ## Code/Software
