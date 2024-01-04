@@ -26,6 +26,11 @@ mcmctree mcmctree.ctl
 - [biogeo_symphyo.R](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeo_symphyo.R): R script to set up for running BioGeoBEARS
 - [symphyo_DEC_vs_DECJ.pdf](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/symphyo_DEC_vs_DECJ.pdf): Plot ancestral states - DEC vs DEC+J
 
+## ancestral_niche_reconstruction
+### niche_modelling
+- [0_process_records.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/0_process_records.sh): Shell script to download occurrences records, split files and process file names
+- [1_record_cleanup.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/1_record_cleanup.sh): Shell script for basic clean-up, removing outlier, downloading POWO data, and trimming with POWO data 
+
 
 ## Code/Software
 - RStudio, Bash
