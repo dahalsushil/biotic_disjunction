@@ -44,7 +44,7 @@ mcmctree mcmctree.ctl
 - [remove_geographic_outliers.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/remove_geographic_outliers.py): Simple script to remove geographic outliers based on standard deviations of distance. Make sure basic things like exact duplicates have been taken care of so the standard deviations are meaningful.
 - [training_regions_ogr.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/training_regions_ogr.py): Script to automate training region development. Points should already be ESRI shape files.Run like this:
 ```
-for f in *.shp; do ./training_regions.py ${f} /Users/Fasch/Desktop/Heuchera_occurrences_test/terr-ecoregions-TNC/tnc_terr_ecoregions.shp; done
+for f in *.shp; do ./training_regions.py ${f} /Users/Fasch/Desktop/Symphyotrichum_occurrences_test/terr-ecoregions-TNC/tnc_terr_ecoregions.shp; done
 ```
 
 
