@@ -29,7 +29,11 @@ mcmctree mcmctree.ctl
 ## ancestral_niche_reconstruction
 ### niche_modelling
 - [0_process_records.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/0_process_records.sh): Shell script to download occurrences records, split files and process file names
-- [1_record_cleanup.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/1_record_cleanup.sh): Shell script for basic clean-up, removing outlier, downloading POWO data, and trimming with POWO data 
+- [1_record_cleanup.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/1_record_cleanup.sh): Shell script for basic clean-up, removing outlier, downloading POWO data, and trimming with POWO data
+- [2_extract_pointvalues_loop.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/2_extract_pointvalues_loop.sh): This shell script drops only the missing values for each point, so point associations are lost
+- [3_csv_to_shapefile_plus_trainingogr_loop.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/3_csv_to_shapefile_plus_trainingogr_loop.sh): Script for writing point shapfiles
+- [4_Symphyotrichum_batch_clip.r](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/4_Symphyotrichum_batch_clip.r): R script for batch clippings
+- [5_MAXENT_batch.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/5_MAXENT_batch.sh): Script for batch runs of Maxent in a bash shell. This assumes that the species names in the occurrence files are the same as the entry in the species column within the files
 
 
 ## Code/Software
