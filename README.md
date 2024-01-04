@@ -24,7 +24,6 @@ mcmctree mcmctree.ctl
 - [FigTree.subg.virgulus.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/FigTree.subg.virgulus.tre): tree file
 - [biogeobears_subg.virgulus.fixed.tsv](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeobears_subg.virgulus.fixed.tsv): .tsv file containing biogeographic range for each species
 - [biogeo_symphyo.R](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeo_symphyo.R): R script to set up for running BioGeoBEARS
-- [drop_duplicates_tree.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/drop_duplicates_tree.py): This script keeps only one taxon per tip name in the event of taxon name duplicates
 - [symphyo_DEC_vs_DECJ.pdf](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/symphyo_DEC_vs_DECJ.pdf): Plot ancestral states - DEC vs DEC+J
 
 
