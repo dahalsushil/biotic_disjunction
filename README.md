@@ -42,7 +42,7 @@ mcmctree mcmctree.ctl
 - [powo_trim.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/powo_trim.py): Script to automate training region development
 - [powo_trim_loop.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/powo_trim_loop.sh): Script to trim POWO record
 - [remove_geographic_outliers.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/remove_geographic_outliers.py): Simple script to remove geographic outliers based on standard deviations of distance. Make sure basic things like exact duplicates have been taken care of so the standard deviations are meaningful.
-- - [ALL_powo_cleaned_manually.csv](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/ALL_powo_cleaned_manually.csv): .csv that contains the occurrences records that are manually checked
+- [ALL_powo_cleaned_manually.csv](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/ALL_powo_cleaned_manually.csv): .csv that contains the occurrences records that are manually checked
 - [training_regions_ogr.py](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/training_regions_ogr.py): Script to automate training region development. Points should already be ESRI shape files.Run like this:
 ```
 for f in *.shp; do ./training_regions.py ${f} /Users/Fasch/Desktop/Symphyotrichum_occurrences_test/terr-ecoregions-TNC/tnc_terr_ecoregions.shp; done
