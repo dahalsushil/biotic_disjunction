@@ -46,7 +46,7 @@ mcmctree mcmctree.ctl
 ```
 for f in *.shp; do ./training_regions.py ${f} /Users/Fasch/Desktop/Symphyotrichum_occurrences_test/terr-ecoregions-TNC/tnc_terr_ecoregions.shp; done
 ```
-
+- [ALL_powo_cleaned_manually.csv](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/ALL_powo_cleaned_manually.csv): .csv that contains the occurrences records that are manually checked
 
 ## Code/Software
 - RStudio, Bash
