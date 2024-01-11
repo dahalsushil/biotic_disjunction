@@ -47,6 +47,11 @@ mcmctree mcmctree.ctl
 for f in *.shp; do ./training_regions.py ${f} /Users/Fasch/Desktop/Symphyotrichum_occurrences_test/terr-ecoregions-TNC/tnc_terr_ecoregions.shp; done
 ```
 
+### pno_calc
+- [extract_and_join_climatesuitability.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/pno_calc/extract_and_join_climatesuitability.sh): Shell script for a simple Predicted Niche Occupancy (PNO) calculator. Run Like this
+```
+bash extract_and_join_climatesuitability.sh path_to_model_folder path_to_environmental_data_folder path_to_extraction_data number_of_bins
+```
 ## Code/Software
 - RStudio, Bash
 
