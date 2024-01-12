@@ -2,7 +2,7 @@
 ## Must have gdal tools in path
 #
 modelpath=good_models
-layerpath=/mnt/Botbot/nitfix/Saxifragles_all_layers_30s
+layerpath=/mnt/Botbot/nitfix/Saxifragles_all_layers_30s_12variables
 extractionpath=extractions_use
 numberbins=50
 
