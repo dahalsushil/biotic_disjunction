@@ -1,0 +1,8 @@
+<OGRVRTDataSource>
+	<OGRVRTLayer name="Symphyotrichum_lanceolatum">
+		<SrcDataSource>Symphyotrichum_lanceolatum.csv</SrcDataSource>
+		<GeometryType>wkbPoint</GeometryType>
+		<LayerSRS>WGS84</LayerSRS>
+		<GeometryField encoding="PointFromColumns" x="x" y="y"/>
+	</OGRVRTLayer>
+</OGRVRTDataSource>

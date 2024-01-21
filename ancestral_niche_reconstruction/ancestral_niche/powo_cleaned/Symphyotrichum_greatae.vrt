@@ -1,0 +1,8 @@
+<OGRVRTDataSource>
+	<OGRVRTLayer name="Symphyotrichum_greatae">
+		<SrcDataSource>Symphyotrichum_greatae.csv</SrcDataSource>
+		<GeometryType>wkbPoint</GeometryType>
+		<LayerSRS>WGS84</LayerSRS>
+		<GeometryField encoding="PointFromColumns" x="x" y="y"/>
+	</OGRVRTLayer>
+</OGRVRTDataSource>
