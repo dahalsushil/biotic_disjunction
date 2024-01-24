@@ -1,0 +1,44 @@
+#NEXUS
+
+BEGIN TAXA;
+    DIMENSIONS NTAX=32;
+    TAXLABELS
+        Symphyotrichum_moranense
+        Symphyotrichum_hintonii
+        Symphyotrichum_turneri
+        Symphyotrichum_falcatum
+        Symphyotrichum_ericoides
+        'Symphyotrichum novae-angliae'
+        Symphyotrichum_amethystinum
+        Symphyotrichum_walteri
+        Symphyotrichum_adnatum
+        Symphyotrichum_grandiflorum
+        Symphyotrichum_pratense
+        Symphyotrichum_sericeum
+        Symphyotrichum_concolor
+        Symphyotrichum_patens
+        Symphyotrichum_georgianum
+        Symphyotrichum_phlogifolium
+        Symphyotrichum_oblongifolium
+        Symphyotrichum_fendleri
+        Symphyotrichum_yukonense
+        Symphyotrichum_defoliatum
+        Symphyotrichum_expansum
+        Symphyotrichum_subulatum
+        Symphyotrichum_squamatum
+        Symphyotrichum_potosinum
+        Symphyotrichum_tenuifolium
+        Symphyotrichum_praealtum
+        Symphyotrichum_bullatum
+        Symphyotrichum_fontinale
+        Symphyotrichum_frondosum
+        Symphyotrichum_ciliatum
+        Symphyotrichum_vahlii
+        Symphyotrichum_chapmanii
+  ;
+END;
+
+BEGIN TREES;
+    TREE 1 = ((((((((Symphyotrichum_moranense:0.001469[&&NHX:variable=224.12],(Symphyotrichum_hintonii:0.001282[&&NHX:variable=185.8],Symphyotrichum_turneri:0.001282[&&NHX:variable=243.28])80:0.000187[&&NHX:variable=243.28])79:0.002921[&&NHX:variable=243.28],(Symphyotrichum_falcatum:0.002949[&&NHX:variable=396.56],Symphyotrichum_ericoides:0.002949[&&NHX:variable=386.98])83:0.001442[&&NHX:variable=243.28])77:0.002856[&&NHX:variable=243.28],('Symphyotrichum novae-angliae':0.004788[&&NHX:variable=358.24],Symphyotrichum_amethystinum:0.004788[&&NHX:variable=358.24])84:0.002459[&&NHX:variable=358.24])76:0.006836[&&NHX:variable=358.24],(((Symphyotrichum_walteri:0.006549[&&NHX:variable=319.92],Symphyotrichum_adnatum:0.006549[&&NHX:variable=281.6])87:0.002067[&&NHX:variable=329.5],Symphyotrichum_grandiflorum:0.008616[&&NHX:variable=329.5])86:0.002807[&&NHX:variable=329.5],((Symphyotrichum_pratense:0.000715[&&NHX:variable=310.34000000000003],Symphyotrichum_sericeum:0.000715[&&NHX:variable=434.88])89:0.00947[&&NHX:variable=319.92],Symphyotrichum_concolor:0.010185[&&NHX:variable=319.92])88:0.001238[&&NHX:variable=329.5])85:0.00266[&&NHX:variable=329.5])75:0.00057[&&NHX:variable=329.5],((((Symphyotrichum_patens:0.004298[&&NHX:variable=358.24],Symphyotrichum_georgianum:0.004298[&&NHX:variable=329.5])93:0.00098[&&NHX:variable=329.5],Symphyotrichum_phlogifolium:0.005277[&&NHX:variable=358.24])92:0.000765[&&NHX:variable=329.5],Symphyotrichum_oblongifolium:0.006043[&&NHX:variable=396.56])91:0.008014[&&NHX:variable=358.24],Symphyotrichum_fendleri:0.014057[&&NHX:variable=425.3])90:0.000596[&&NHX:variable=329.5])74:0.001422[&&NHX:variable=329.5],Symphyotrichum_yukonense:0.016075[&&NHX:variable=444.46])73:0.002935[&&NHX:variable=329.5],Symphyotrichum_defoliatum:0.01901[&&NHX:variable=310.34000000000003])72:0.002247[&&NHX:variable=329.5],((((((Symphyotrichum_expansum:0.0024[&&NHX:variable=166.64],Symphyotrichum_subulatum:0.0024[&&NHX:variable=348.66])100:0.006247[&&NHX:variable=166.64],Symphyotrichum_squamatum:0.008648[&&NHX:variable=147.48000000000002])99:0.001087[&&NHX:variable=166.64],(Symphyotrichum_potosinum:0.006138[&&NHX:variable=233.7],Symphyotrichum_tenuifolium:0.006138[&&NHX:variable=339.08000000000004])101:0.003596[&&NHX:variable=339.08000000000004])98:0.003886[&&NHX:variable=166.64],((Symphyotrichum_praealtum:0.002731[&&NHX:variable=358.24],Symphyotrichum_bullatum:0.002731[&&NHX:variable=166.64])103:0.001366[&&NHX:variable=166.64],Symphyotrichum_fontinale:0.004096[&&NHX:variable=204.96])102:0.009524[&&NHX:variable=204.96])97:0.000896[&&NHX:variable=166.64],((Symphyotrichum_frondosum:0.003592[&&NHX:variable=396.56],Symphyotrichum_ciliatum:0.003592[&&NHX:variable=482.78000000000003])106:0.004823[&&NHX:variable=396.56],Symphyotrichum_vahlii:0.008414[&&NHX:variable=147.48000000000002])105:0.006102[&&NHX:variable=147.48000000000002])96:0.003737[&&NHX:variable=166.64],Symphyotrichum_chapmanii:0.018254[&&NHX:variable=281.6])95:0.0030029999999999996[&&NHX:variable=281.6])71:0.27763800000000005[&&NHX:variable=281.6];
+END;
+
