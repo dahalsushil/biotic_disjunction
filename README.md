@@ -1,13 +1,13 @@
 # Biotic_disjunction
 
-## Phylogenomics:
+## Phylogenomic analyses:
 This includes the shell scripts to clean the sequencing data, doing the alignments, getting ASTRAL and RaxML tree
   - [1_process_then_align_subg_virgulus.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/1_process_then_align_subg_virgulus.sh): Shell script to do the alignments and get the gene trees for ASTRAL, concatenate alignments and get the concanated tree
   - [exclude_list_ASTRAL.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/exclude_list_ASTRAL.sh): This is the list to include all species within subgenus virgulus, outgroups and few species of other subgenera
   - [astral.sushilmegatree.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/Results/astral.sushilmegatree.tre): ASTRAL result
   - [subg.virgulus.raxml.support.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/Phylogenomics/Results/subg.virgulus.raxml.support.tre): RAxML result
 
-## BioGeoBEARS
+## Biogeographic analyses
 ### mcmctree
 The program uses for inputa sequence alignment (nucleotide or protein), a phylogenetic tree with fossil calibrations, and a control file (usually called mcmctree.ctl) that contains the instructions for the program. MCMCTree is part of the PAML package.
 - [astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.formatted.tre](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/mcmctree/astral.sushilmegatree.subg.virgulus.redo.newick.noduplicate.formatted.tre): Dated ASTRAL tree
@@ -26,7 +26,8 @@ mcmctree mcmctree.ctl
 - [biogeo_symphyo.R](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/biogeo_symphyo.R): R script to set up for running BioGeoBEARS
 - [symphyo_DEC_vs_DECJ.pdf](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/symphyo_DEC_vs_DECJ.pdf): Plot ancestral states - DEC vs DEC+J
 
-## ancestral_niche_reconstruction
+## Ancestral_niche_reconstruction
+First, we will start by building ecological niche models or the species distribution models for the species of interest and then use those models to reconstruct the ancestral niche and predict paleo-ranges as implemented by Folk et al., (2023). 
 ### niche_modelling
 - [0_process_records.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/0_process_records.sh): Shell script to download occurrences records, split files and process file names
 - [1_record_cleanup.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/1_record_cleanup.sh): Shell script for basic clean-up, removing outlier, downloading POWO data, and trimming with POWO data
