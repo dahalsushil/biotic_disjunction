@@ -27,7 +27,7 @@ mcmctree mcmctree.ctl
 - [symphyo_DEC_vs_DECJ.pdf](https://github.com/dahalsushil/biotic_disjunction/blob/main/BioGeoBEARS/symphyo_DEC_vs_DECJ.pdf): Plot ancestral states - DEC vs DEC+J
 
 ## ancestral_niche_reconstruction
-First, we will start by building ecological niche models or the species distribution model and then use those models to reconstruct the ancestral niche and predict paleo-ranges as implemented by Folk et al., (2023). 
+First, we will start by building ecological niche models or the species distribution models for the species of interest and then use those models to reconstruct the ancestral niche and predict paleo-ranges as implemented by Folk et al., (2023). 
 ### niche_modelling
 - [0_process_records.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/0_process_records.sh): Shell script to download occurrences records, split files and process file names
 - [1_record_cleanup.sh](https://github.com/dahalsushil/biotic_disjunction/blob/main/ancestral_niche_reconstruction/niche_modeling/1_record_cleanup.sh): Shell script for basic clean-up, removing outlier, downloading POWO data, and trimming with POWO data
